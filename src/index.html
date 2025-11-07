@@ -16,28 +16,28 @@
 		<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
-	<body class="bg-zinc-950 flex items-center justify-center min-h-screen p-4">
+	<body class="bg-zinc-950 flex items-center justify-center min-h-screen p-3 sm:p-4">
 		<main class="w-full max-w-md">
-			<form action="javascript:void(0)" method="post" class="text-white bg-zinc-900/80 backdrop-blur rounded-2xl p-8 shadow-2xl border border-zinc-800" novalidate>
+			<form action="javascript:void(0)" method="post" class="text-white bg-zinc-900/80 backdrop-blur rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl border border-zinc-800" novalidate>
 				<!-- Form Header -->
-				<div class="text-center mb-8">
-					<h1 class="text-4xl font-bold mb-2 p-1 bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Sign Up</h1>
-					<p class="text-zinc-400 text-sm">Create your account to get started</p>
+				<div class="text-center mb-6 sm:mb-8">
+					<h1 class="text-3xl sm:text-4xl font-bold mb-2 p-1 bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Sign Up</h1>
+					<p class="text-zinc-400 text-xs sm:text-sm">Create your account to get started</p>
 				</div>
 
 				<!-- Form Fields -->
-				<fieldset class="flex flex-col gap-5">
+				<fieldset class="flex flex-col gap-4 sm:gap-5">
 					<legend class="sr-only">Account Information</legend>
 
 					<!-- Name Field -->
 					<div class="flex flex-col gap-2">
-						<label for="name" class="text-sm font-medium text-zinc-300">Name</label>
+						<label for="name" class="text-xs sm:text-sm font-medium text-zinc-300">Name</label>
 						<input
 							type="text"
 							id="name"
 							name="name"
 							placeholder="John Doe"
-							class="bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+							class="bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm sm:text-base"
 							autocomplete="name"
 							required
 							aria-describedby="name-error"
@@ -47,13 +47,13 @@
 
 					<!-- Email Field -->
 					<div class="flex flex-col gap-2">
-						<label for="email" class="text-sm font-medium text-zinc-300">Email</label>
+						<label for="email" class="text-xs sm:text-sm font-medium text-zinc-300">Email</label>
 						<input
 							type="email"
 							id="email"
 							name="email"
 							placeholder="you@example.com"
-							class="bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+							class="bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm sm:text-base"
 							autocomplete="email"
 							required
 							aria-describedby="email-error"
@@ -63,14 +63,14 @@
 
 					<!-- Password Field -->
 					<div class="flex flex-col gap-2">
-						<label for="password" class="text-sm font-medium text-zinc-300">Password</label>
+						<label for="password" class="text-xs sm:text-sm font-medium text-zinc-300">Password</label>
 						<div class="relative">
 							<input
 								type="password"
 								id="password"
 								name="password"
 								placeholder="••••••••"
-								class="w-full bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-3 px-4 pr-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+								class="w-full bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-2.5 sm:py-3 px-3 sm:px-4 pr-11 sm:pr-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm sm:text-base"
 								autocomplete="new-password"
 								required
 								minlength="8"
@@ -79,11 +79,11 @@
 							<button
 								type="button"
 								id="togglePassword"
-								class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-300 focus:outline-none focus:text-blue-500 transition-colors cursor-pointer"
+								class="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-300 focus:outline-none focus:text-blue-500 transition-colors cursor-pointer"
 								aria-label="Toggle password visibility"
 							>
 								<!-- Eye Icon (Show) -->
-								<svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+								<svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -92,7 +92,7 @@
 									<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
 								</svg>
 								<!-- Eye Slash Icon (Hide) -->
-								<svg id="eyeSlashIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden">
+								<svg id="eyeSlashIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 hidden">
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -106,16 +106,16 @@
 					</div>
 
 					<!-- Terms and Conditions Checkbox -->
-					<div class="flex items-start gap-3 pt-2">
+					<div class="flex items-start gap-2.5 sm:gap-3 pt-2">
 						<input
 							type="checkbox"
 							id="terms"
 							name="terms"
-							class="w-5 h-5 mt-0.5 rounded border-zinc-700 bg-zinc-800/50 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 cursor-pointer transition-all"
+							class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 rounded border-zinc-700 bg-zinc-800/50 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 cursor-pointer transition-all"
 							required
 							aria-describedby="terms-error"
 						/>
-						<label for="terms" class="text-sm text-zinc-400 leading-relaxed cursor-pointer">
+						<label for="terms" class="text-xs sm:text-sm text-zinc-400 leading-relaxed cursor-pointer">
 							I agree to the <a href="javascript:void(0)" class="text-blue-500 hover:text-blue-400 underline underline-offset-2 transition-colors">terms and conditions</a> and
 							<a href="javascript:void(0)" class="text-blue-500 hover:text-blue-400 underline underline-offset-2 transition-colors">privacy policy</a>
 						</label>
@@ -125,25 +125,25 @@
 					<!-- Submit Button -->
 					<button
 						type="submit"
-						class="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg shadow-blue-900/50 hover:shadow-xl hover:shadow-blue-900/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 transition-all transform hover:scale-[1.02] active:scale-[0.98] mt-2"
+						class="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg shadow-lg shadow-blue-900/50 hover:shadow-xl hover:shadow-blue-900/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 transition-all transform hover:scale-[1.02] active:scale-[0.98] mt-2 text-sm sm:text-base"
 					>
 						Create Account
 					</button>
 				</fieldset>
 
 				<!-- Divider -->
-				<div class="relative my-6">
+				<div class="relative my-5 sm:my-6">
 					<div class="absolute inset-0 flex items-center">
 						<div class="w-full border-t border-zinc-800"></div>
 					</div>
 					<div class="relative flex justify-center text-xs">
-						<span class="bg-zinc-900 px-3 text-zinc-500">Already have an account?</span>
+						<span class="bg-zinc-900 px-2.5 sm:px-3 text-zinc-500">Already have an account?</span>
 					</div>
 				</div>
 
 				<!-- Sign In Link -->
 				<div class="text-center">
-					<a href="javascript:void(0)" class="text-blue-500 hover:text-blue-400 text-sm font-medium transition-colors">Sign in instead</a>
+					<a href="javascript:void(0)" class="text-blue-500 hover:text-blue-400 text-xs sm:text-sm font-medium transition-colors">Sign in instead</a>
 				</div>
 			</form>
 		</main>
