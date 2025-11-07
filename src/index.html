@@ -16,52 +16,152 @@
 		<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
-	<body class="bg-zinc-950 flex items-center justify-center min-h-screen">
-		<main>
-			<form action="javascript:void(0)" method="post" class="text-white bg-zinc-900 min-w-[min(90%,400px)] rounded-2xl p-8 py-12 border border-white" novalidate>
-				<!-- Form Title -->
-				<h1 class="text-4xl font-bold mb-6">Sign Up</h1>
+	<body class="bg-zinc-950 flex items-center justify-center min-h-screen p-4">
+		<main class="w-full max-w-md">
+			<form action="javascript:void(0)" method="post" class="text-white bg-zinc-900/80 backdrop-blur rounded-2xl p-8 shadow-2xl border border-zinc-800" novalidate>
+				<!-- Form Header -->
+				<div class="text-center mb-8">
+					<h1 class="text-4xl font-bold mb-2 p-1 bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Sign Up</h1>
+					<p class="text-zinc-400 text-sm">Create your account to get started</p>
+				</div>
+
 				<!-- Form Fields -->
-				<fieldset class="flex flex-col gap-6">
+				<fieldset class="flex flex-col gap-5">
 					<legend class="sr-only">Account Information</legend>
+
 					<!-- Name Field -->
 					<div class="flex flex-col gap-2">
-						<label for="name">Name</label>
-						<input type="text" id="name" name="name" placeholder="Enter your name" class="border border-white py-2 px-4 rounded-md" autocomplete="name" required aria-describedby="name-error" />
+						<label for="name" class="text-sm font-medium text-zinc-300">Name</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="John Doe"
+							class="bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+							autocomplete="name"
+							required
+							aria-describedby="name-error"
+						/>
 						<span id="name-error" class="sr-only" aria-live="polite"></span>
 					</div>
+
 					<!-- Email Field -->
 					<div class="flex flex-col gap-2">
-						<label for="email">Email</label>
-						<input type="email" id="email" name="email" placeholder="Enter your email" class="border border-white py-2 px-4 rounded-md" autocomplete="email" required aria-describedby="email-error" />
+						<label for="email" class="text-sm font-medium text-zinc-300">Email</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="you@example.com"
+							class="bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+							autocomplete="email"
+							required
+							aria-describedby="email-error"
+						/>
 						<span id="email-error" class="sr-only" aria-live="polite"></span>
 					</div>
+
 					<!-- Password Field -->
 					<div class="flex flex-col gap-2">
-						<label for="password">Password</label>
-						<input
-							type="password"
-							id="password"
-							name="password"
-							placeholder="Enter your password"
-							class="border border-white py-2 px-4 rounded-md"
-							autocomplete="new-password"
-							required
-							minlength="8"
-							aria-describedby="password-error"
-						/>
+						<label for="password" class="text-sm font-medium text-zinc-300">Password</label>
+						<div class="relative">
+							<input
+								type="password"
+								id="password"
+								name="password"
+								placeholder="••••••••"
+								class="w-full bg-zinc-800/50 border border-zinc-700 text-white placeholder:text-zinc-500 py-3 px-4 pr-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+								autocomplete="new-password"
+								required
+								minlength="8"
+								aria-describedby="password-error password-hint"
+							/>
+							<button
+								type="button"
+								id="togglePassword"
+								class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-300 focus:outline-none focus:text-blue-500 transition-colors cursor-pointer"
+								aria-label="Toggle password visibility"
+							>
+								<!-- Eye Icon (Show) -->
+								<svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+									/>
+									<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+								</svg>
+								<!-- Eye Slash Icon (Hide) -->
+								<svg id="eyeSlashIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
+									/>
+								</svg>
+							</button>
+						</div>
+						<span id="password-hint" class="text-xs text-zinc-500">Must be at least 8 characters</span>
 						<span id="password-error" class="sr-only" aria-live="polite"></span>
 					</div>
+
 					<!-- Terms and Conditions Checkbox -->
-					<div class="flex items-center gap-2">
-						<input type="checkbox" id="terms" name="terms" class="w-4 h-4" required aria-describedby="terms-error" />
-						<label for="terms">I agree to the <a href="javascript:void(0)" class="underline hover:no-underline hover:text-blue-500">terms and conditions</a></label>
+					<div class="flex items-start gap-3 pt-2">
+						<input
+							type="checkbox"
+							id="terms"
+							name="terms"
+							class="w-5 h-5 mt-0.5 rounded border-zinc-700 bg-zinc-800/50 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 cursor-pointer transition-all"
+							required
+							aria-describedby="terms-error"
+						/>
+						<label for="terms" class="text-sm text-zinc-400 leading-relaxed cursor-pointer">
+							I agree to the <a href="javascript:void(0)" class="text-blue-500 hover:text-blue-400 underline underline-offset-2 transition-colors">terms and conditions</a> and
+							<a href="javascript:void(0)" class="text-blue-500 hover:text-blue-400 underline underline-offset-2 transition-colors">privacy policy</a>
+						</label>
 						<span id="terms-error" class="sr-only" aria-live="polite"></span>
 					</div>
+
 					<!-- Submit Button -->
-					<button type="submit" class="bg-blue-600 py-2 font-bold rounded-md cursor-pointer hover:bg-blue-700 transition-colors">Sign Up</button>
+					<button
+						type="submit"
+						class="bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg shadow-blue-900/50 hover:shadow-xl hover:shadow-blue-900/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 transition-all transform hover:scale-[1.02] active:scale-[0.98] mt-2"
+					>
+						Create Account
+					</button>
 				</fieldset>
+
+				<!-- Divider -->
+				<div class="relative my-6">
+					<div class="absolute inset-0 flex items-center">
+						<div class="w-full border-t border-zinc-800"></div>
+					</div>
+					<div class="relative flex justify-center text-xs">
+						<span class="bg-zinc-900 px-3 text-zinc-500">Already have an account?</span>
+					</div>
+				</div>
+
+				<!-- Sign In Link -->
+				<div class="text-center">
+					<a href="javascript:void(0)" class="text-blue-500 hover:text-blue-400 text-sm font-medium transition-colors">Sign in instead</a>
+				</div>
 			</form>
 		</main>
+
+		<script>
+			// Toggle password visibility
+			const togglePassword = document.getElementById("togglePassword");
+			const passwordInput = document.getElementById("password");
+			const eyeIcon = document.getElementById("eyeIcon");
+			const eyeSlashIcon = document.getElementById("eyeSlashIcon");
+
+			togglePassword.addEventListener("click", function () {
+				const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+				passwordInput.setAttribute("type", type);
+
+				eyeIcon.classList.toggle("hidden");
+				eyeSlashIcon.classList.toggle("hidden");
+			});
+		</script>
 	</body>
 </html>
