@@ -3,49 +3,65 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Sign up form with name, email, password, and terms agreement." />
+		<meta name="description" content="Create your account today. Sign up with your name, email, and password to get started with our platform." />
 		<meta name="author" content="JabssDev" />
-		<meta name="keywords" content="signup, form, registration, user" />
 
-		<meta property="og:title" content="Sign Up Form" />
-		<meta property="og:description" content="Sign up form with name, email, password, and terms agreement." />
+		<meta property="og:title" content="Sign Up - Create Your Account" />
+		<meta property="og:description" content="Create your account today. Sign up with your name, email, and password to get started with our platform." />
 		<meta property="og:type" content="website" />
 
 		<meta name="theme-color" content="#18181b" />
 
-		<title>Sign Up</title>
+		<title>Sign Up - Create Your Account</title>
 		<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body class="bg-zinc-950 flex items-center justify-center min-h-screen">
-		<form class="text-white bg-zinc-900 min-w-[min(90%,400px)] rounded-2xl p-8 py-12 border border-white">
-			<!-- Form Title -->
-			<h2 class="text-4xl font-bold mb-6">Sign Up</h2>
-			<!-- Form Fields -->
-			<div class="flex flex-col gap-6">
-				<!-- Name Field -->
-				<label class="flex flex-col gap-2">
-					<span>Name</span>
-					<input type="text" placeholder="Enter your name" class="border border-white py-2 px-4 rounded-md" />
-				</label>
-				<!-- Email Field -->
-				<label class="flex flex-col gap-2">
-					<span>Email</span>
-					<input type="text" placeholder="Enter your email" class="border border-white py-2 px-4 rounded-md" />
-				</label>
-				<!-- Password Field -->
-				<label class="flex flex-col gap-2">
-					<span>Password</span>
-					<input type="text" placeholder="Enter your password" class="border border-white py-2 px-4 rounded-md" />
-				</label>
-				<!-- Terms and Conditions Checkbox -->
-				<label class="flex items-center gap-2">
-					<input type="checkbox" class="w-4 h-4" />
-					<span>I agree to the terms and conditions</span>
-				</label>
-				<!-- Submit Button -->
-				<input type="submit" value="Sign Up" class="bg-blue-600 py-2 font-bold rounded-md" />
-			</div>
-		</form>
+		<main>
+			<form action="javascript:void(0)" method="post" class="text-white bg-zinc-900 min-w-[min(90%,400px)] rounded-2xl p-8 py-12 border border-white" novalidate>
+				<!-- Form Title -->
+				<h1 class="text-4xl font-bold mb-6">Sign Up</h1>
+				<!-- Form Fields -->
+				<fieldset class="flex flex-col gap-6">
+					<legend class="sr-only">Account Information</legend>
+					<!-- Name Field -->
+					<div class="flex flex-col gap-2">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" placeholder="Enter your name" class="border border-white py-2 px-4 rounded-md" autocomplete="name" required aria-describedby="name-error" />
+						<span id="name-error" class="sr-only" aria-live="polite"></span>
+					</div>
+					<!-- Email Field -->
+					<div class="flex flex-col gap-2">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="Enter your email" class="border border-white py-2 px-4 rounded-md" autocomplete="email" required aria-describedby="email-error" />
+						<span id="email-error" class="sr-only" aria-live="polite"></span>
+					</div>
+					<!-- Password Field -->
+					<div class="flex flex-col gap-2">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="Enter your password"
+							class="border border-white py-2 px-4 rounded-md"
+							autocomplete="new-password"
+							required
+							minlength="8"
+							aria-describedby="password-error"
+						/>
+						<span id="password-error" class="sr-only" aria-live="polite"></span>
+					</div>
+					<!-- Terms and Conditions Checkbox -->
+					<div class="flex items-center gap-2">
+						<input type="checkbox" id="terms" name="terms" class="w-4 h-4" required aria-describedby="terms-error" />
+						<label for="terms">I agree to the <a href="javascript:void(0)" class="underline hover:no-underline hover:text-blue-500">terms and conditions</a></label>
+						<span id="terms-error" class="sr-only" aria-live="polite"></span>
+					</div>
+					<!-- Submit Button -->
+					<button type="submit" class="bg-blue-600 py-2 font-bold rounded-md cursor-pointer hover:bg-blue-700 transition-colors">Sign Up</button>
+				</fieldset>
+			</form>
+		</main>
 	</body>
 </html>
